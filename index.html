@@ -208,18 +208,17 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>问题：在windows操作系统上安装oracle 10G R2时出现了标题中的错误，如下图：</p>
-<p><img src="Oracl安装开始操作系统版本检查不通过/截图1.png" alt="image"></p>
-<p>解决方案：几番查询之后发现是oracle的一个小bug，可以通过更改配置文件“<strong>oraparam.ini</strong>”来解决，主要修改的地方看下图<br>第一处修改地方：<br><img src="Oracl安装开始操作系统版本检查不通过/截图2.png" alt="image"></p>
+<p><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图1.png" alt="image"></p>
+<p>解决方案：几番查询之后发现是oracle的一个小bug，可以通过更改配置文件“<strong>oraparam.ini</strong>”来解决，主要修改的地方看下图<br>第一处修改地方：<br><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图2.png" alt="image"></p>
 <p>第二处修改地方</p>
-<p><img src="Oracl安装开始操作系统版本检查不通过/截图3.png" alt="image"></p>
+<p><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图3.png" alt="image"></p>
 <p>添加内容如下：（实际上就是直接拷贝6.0的所有内容，然后修改成6.1即可）</p>
-<p>[Windows-6.1-required]                    </p>
-<p>#Minimum display colours for OUI to run<br>MIN_DISPLAY_COLORS=256                    </p>
+<p>[Windows-6.1-required]</p>
+<p>#Minimum display colours for OUI to run<br>MIN_DISPLAY_COLORS=256</p>
 <p>#Minimum CPU speed required for OUI       </p>
 <p>#CPU=300<br>[Windows-6.1-optional]   </p>
-<p>不过这只是过了第一关，当安装程序执行后还有一步检查，还是会提示系统版本不支持。后来经过同事的知道。告诉我还有两个文件需要修改。</p>
-<p>1，oracle安装包\stage\prereq\db_prereqs\db<br>2，\stage\prereq\db\</p>
-<p>在上面两个路径中都一个<strong>==refhost.xml==</strong>文件。<br>在其中加上6.1版本。参照下图。<br><img src="Oracl安装开始操作系统版本检查不通过/截图4.png" alt="image"><br>这会就可以了。</p>
+<p>不过这只是过了第一关，当安装程序执行后还有一步检查，还是会提示系统版本不支持。后来经过同事的指导。告诉我还有两个文件需要修改。</p>
+<p>1，oracle安装包路径\stage\prereq\db_prereqs\db<br>2，oracle安装包路径\stage\prereq\db\<br>（下载的版本不一定完全一样。大家根据自己的文件路径寻找下面的文件即可）<br>在上面两个路径中都一个<strong>==refhost.xml==</strong>文件。<br>在其中加上6.1版本。参照下图。<br><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图4.png" alt="image"><br>这回就可以正常安装了。</p>
 
       
 
@@ -233,7 +232,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Oracle,解决方案,Windows</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
         		</li>
       		
 		</ul>
@@ -486,7 +493,15 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle,解决方案,Windows</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决方案</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
