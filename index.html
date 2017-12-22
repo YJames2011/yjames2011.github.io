@@ -209,17 +209,10 @@ var _hmt = _hmt || [];
       
         <p>问题：在windows操作系统上安装oracle 10G R2时出现了标题中的错误，如下图：</p>
 <p><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图1.png" alt="image"></p>
-<p>解决方案：几番查询之后发现是oracle的一个小bug，可以通过更改配置文件“<strong>oraparam.ini</strong>”来解决，主要修改的地方看下图<br>第一处修改地方：<br><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图2.png" alt="image"></p>
-<p>第二处修改地方</p>
-<p><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图3.png" alt="image"></p>
-<p>添加内容如下：（实际上就是直接拷贝6.0的所有内容，然后修改成6.1即可）</p>
-<p>[Windows-6.1-required]</p>
-<p>#Minimum display colours for OUI to run<br>MIN_DISPLAY_COLORS=256</p>
-<p>#Minimum CPU speed required for OUI       </p>
-<p>#CPU=300<br>[Windows-6.1-optional]   </p>
-<p>不过这只是过了第一关，当安装程序执行后还有一步检查，还是会提示系统版本不支持。后来经过同事的指导。告诉我还有两个文件需要修改。</p>
-<p>1，oracle安装包路径\stage\prereq\db_prereqs\db<br>2，oracle安装包路径\stage\prereq\db\<br>（下载的版本不一定完全一样。大家根据自己的文件路径寻找下面的文件即可）<br>在上面两个路径中都一个<strong>==refhost.xml==</strong>文件。<br>在其中加上6.1版本。参照下图。<br><img src="/2017/12/22/Oracl安装开始操作系统版本检查不通过/截图4.png" alt="image"><br>这回就可以正常安装了。</p>
-
+<p>解决方案：几番查询之后发现是oracle的一个小bug，可以通过更改配置文件“<strong>oraparam.ini</strong>”来解决，主要修改的地方看下图<br></p>
+        
+          <a class="article-more-a" href="/2017/12/22/Oracl安装开始操作系统版本检查不通过/#more">more >></a>
+        
       
 
       
@@ -290,14 +283,10 @@ var _hmt = _hmt || [];
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br></p>
+        
+          <a class="article-more-a" href="/2017/12/21/hello-world/#more">more >></a>
+        
       
 
       
@@ -348,9 +337,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>做对日的都会用到<strong>SakuraEditor</strong>。这款编辑器真的很不错。不过因为是日本人发明的，所以不会日语的人使用起来有点麻烦，无意间看到编辑器下载下的讨论，原来已经可以切换<strong>英文</strong>了。方法参考下边的内容。</p>
-<p>Thank you for your contribution to all of us.<br>English version, even only that the toolbar is English is welcome.<br>And, can you software support the color printer because I want print the program code in colors like UltraEdit.<br>Thanks again! </p>
-<p>Discussion<br>    Language preference feature has been implemented on version 2.1.1.0 or later.<br>    You can download English language DLL from:<br>    <a href="http://note.youdao.com/" target="_blank" rel="noopener">https://sourceforge.net/projects/sakura-editor/files/language2/</a><br>    Unzip and put dll file in the same directory as “<strong>sakura.exe</strong>“.<br>    Start editor and choice language from [<strong>共通設定</strong>]―[<strong>ウィンドウ</strong>]-[<strong>言語</strong>].<br>    Sources has been commited to:<br>    <a href="http://note.youdao.com/" target="_blank" rel="noopener">https://svn.code.sf.net/p/sakura-editor/code/sakura/trunk2/sakura_lang_en_US</a><br>    Improvement in the translation, or translation into other languages is welcome.<br>    Color printing is supported on version 2.1.0.0 or later.</p>
-
+<p>Thank you for your contribution to all of us.<br>English version, even only that the toolbar is English is welcome.<br>And, can you software support the color printer because I want print the program code in colors like UltraEdit.<br>Thanks again!<br></p>
+        
+          <a class="article-more-a" href="/2017/04/16/Sakura-Editor-英文版/#more">more >></a>
+        
       
 
       
