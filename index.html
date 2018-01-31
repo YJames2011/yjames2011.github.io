@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaojian.me">
@@ -185,6 +186,70 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Memcached的MemCachedClient设置过期时限" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/31/Memcached的MemCachedClient设置过期时限/">Memcached的MemCachedClient设置过期时限</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/31/Memcached的MemCachedClient设置过期时限/" class="archive-article-date">
+  	<time datetime="2018-01-31T09:36:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="testMemcache-java"><a href="#testMemcache-java" class="headerlink" title="testMemcache.java"></a>testMemcache.java</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public void testMemcache()&#123;  </span><br><span class="line">    MemcacheUtil.set(&quot;abc&quot;,&quot;abc&quot;, new Date(1*10*1000));    </span><br><span class="line">    MemcacheUtil.set(&quot;bbb&quot;,&quot;bbb&quot;, new Date(System.currentTimeMillis()+8000));    </span><br><span class="line">      </span><br><span class="line">      //大于2000为null               </span><br><span class="line">      try &#123;  </span><br><span class="line">        Thread.sleep(1*8*1000);  </span><br><span class="line">    &#125; catch (InterruptedException e) &#123;  </span><br><span class="line">        // TODO Auto-generated catch block  </span><br><span class="line">        e.printStackTrace();  </span><br><span class="line">    &#125;    </span><br><span class="line">                  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;bbb&quot;));   </span><br><span class="line">  try &#123;  </span><br><span class="line">    Thread.sleep(1*1*1000);  </span><br><span class="line">&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">    // TODO Auto-generated catch block  </span><br><span class="line">    e.printStackTrace();  </span><br><span class="line">&#125;  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;bbb&quot;));   </span><br><span class="line">try &#123;  </span><br><span class="line">    Thread.sleep(1*1*1000);  </span><br><span class="line">&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">    // TODO Auto-generated catch block  </span><br><span class="line">    e.printStackTrace();  </span><br><span class="line">&#125;  </span><br><span class="line">System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">System.out.println(MemcacheUtil.get(&quot;bbb&quot;));  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="MemcacheUtil-java"><a href="#MemcacheUtil-java" class="headerlink" title="MemcacheUtil.java"></a>MemcacheUtil.java</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import com.danga.MemCached.MemCachedClient;</span><br><span class="line"></span><br><span class="line">public class MemcacheUtil &#123;</span><br><span class="line">	public static MemCachedClient getMemCachedClient() &#123;</span><br><span class="line">		return SpringContextUtils.getBean(&quot;memcachedClient&quot;, MemCachedClient.class);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean set(String key, Object value) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().set(newKey, value);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean set(String key, Object value,Date date) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().set(newKey, value, date);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static Object get(String key) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().get(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean keyExists(String key) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().keyExists(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void clearCache(String...keys) &#123;</span><br><span class="line">		for (String key : keys) &#123;</span><br><span class="line">			String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">			getMemCachedClient().delete(newKey);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean clearCacheAll() &#123;</span><br><span class="line">		return getMemCachedClient().flushAll();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 删除缓存中的数据</span><br><span class="line">	 * @param key</span><br><span class="line">	 */</span><br><span class="line">	public static boolean deleteCache(String key)&#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().delete(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：<br><br>abc<br><br>null<br><br>abc<br><br>null<br><br>null<br><br>null<br></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Memcached</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/31/Memcached的MemCachedClient设置过期时限/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-强制类型转换（引用类型）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -464,7 +529,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-			<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    		<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -549,6 +614,10 @@ var _hmt = _hmt || [];
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>

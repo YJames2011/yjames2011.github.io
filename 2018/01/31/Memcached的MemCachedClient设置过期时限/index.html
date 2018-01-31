@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaojian.me">
-  <title>Tag: SakuraEditor | YJames2011的博客</title>
+  <title>Memcached的MemCachedClient设置过期时限 | YJames2011的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做人要以静修身，以俭培德，以退处事，以让养心。人心何时知足，知足便足。人生何时闲，偷闲便闲。知足常足心，终身不辱人。知止常止心，终身不耻人。心足虽贫不是贫，心贪虽富亦是贫。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YJames2011的博客">
-<meta property="og:url" content="http://yaojian.me/tags/SakuraEditor/index.html">
+  <meta name="description" content="testMemcache.java12345678910111213141516171819202122232425262728293031public void testMemcache()&amp;#123;      MemcacheUtil.set(&amp;quot;abc&amp;quot;,&amp;quot;abc&amp;quot;, new Date(1*10*1000));        MemcacheUtil.">
+<meta name="keywords" content="Memcached">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memcached的MemCachedClient设置过期时限">
+<meta property="og:url" content="http://yaojian.me/2018/01/31/Memcached的MemCachedClient设置过期时限/index.html">
 <meta property="og:site_name" content="YJames2011的博客">
-<meta property="og:description" content="做人要以静修身，以俭培德，以退处事，以让养心。人心何时知足，知足便足。人生何时闲，偷闲便闲。知足常足心，终身不辱人。知止常止心，终身不耻人。心足虽贫不是贫，心贪虽富亦是贫。">
+<meta property="og:description" content="testMemcache.java12345678910111213141516171819202122232425262728293031public void testMemcache()&amp;#123;      MemcacheUtil.set(&amp;quot;abc&amp;quot;,&amp;quot;abc&amp;quot;, new Date(1*10*1000));        MemcacheUtil.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-31T09:37:37.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YJames2011的博客">
-<meta name="twitter:description" content="做人要以静修身，以俭培德，以退处事，以让养心。人心何时知足，知足便足。人生何时闲，偷闲便闲。知足常足心，终身不辱人。知止常止心，终身不耻人。心足虽贫不是贫，心贪虽富亦是贫。">
+<meta name="twitter:title" content="Memcached的MemCachedClient设置过期时限">
+<meta name="twitter:description" content="testMemcache.java12345678910111213141516171819202122232425262728293031public void testMemcache()&amp;#123;      MemcacheUtil.set(&amp;quot;abc&amp;quot;,&amp;quot;abc&amp;quot;, new Date(1*10*1000));        MemcacheUtil.">
   
     <link rel="alternative" href="/atom.xml" title="YJames2011的博客" type="application/atom+xml">
   
@@ -185,64 +187,161 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Memcached的MemCachedClient设置过期时限" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/16/Sakura-Editor-英文版/" class="archive-article-date">
-  	<time datetime="2017-04-16T15:10:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/16/Sakura-Editor-英文版/">Sakura Editor 英文版</a>
+    <h1 class="article-title" itemprop="name">
+      Memcached的MemCachedClient设置过期时限
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/31/Memcached的MemCachedClient设置过期时限/" class="archive-article-date">
+  	<time datetime="2018-01-31T09:36:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="testMemcache-java"><a href="#testMemcache-java" class="headerlink" title="testMemcache.java"></a>testMemcache.java</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public void testMemcache()&#123;  </span><br><span class="line">    MemcacheUtil.set(&quot;abc&quot;,&quot;abc&quot;, new Date(1*10*1000));    </span><br><span class="line">    MemcacheUtil.set(&quot;bbb&quot;,&quot;bbb&quot;, new Date(System.currentTimeMillis()+8000));    </span><br><span class="line">      </span><br><span class="line">      //大于2000为null               </span><br><span class="line">      try &#123;  </span><br><span class="line">        Thread.sleep(1*8*1000);  </span><br><span class="line">    &#125; catch (InterruptedException e) &#123;  </span><br><span class="line">        // TODO Auto-generated catch block  </span><br><span class="line">        e.printStackTrace();  </span><br><span class="line">    &#125;    </span><br><span class="line">                  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;bbb&quot;));   </span><br><span class="line">  try &#123;  </span><br><span class="line">    Thread.sleep(1*1*1000);  </span><br><span class="line">&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">    // TODO Auto-generated catch block  </span><br><span class="line">    e.printStackTrace();  </span><br><span class="line">&#125;  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">  System.out.println(MemcacheUtil.get(&quot;bbb&quot;));   </span><br><span class="line">try &#123;  </span><br><span class="line">    Thread.sleep(1*1*1000);  </span><br><span class="line">&#125; catch (InterruptedException e) &#123;  </span><br><span class="line">    // TODO Auto-generated catch block  </span><br><span class="line">    e.printStackTrace();  </span><br><span class="line">&#125;  </span><br><span class="line">System.out.println(MemcacheUtil.get(&quot;abc&quot;));  </span><br><span class="line">System.out.println(MemcacheUtil.get(&quot;bbb&quot;));  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="MemcacheUtil-java"><a href="#MemcacheUtil-java" class="headerlink" title="MemcacheUtil.java"></a>MemcacheUtil.java</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import com.danga.MemCached.MemCachedClient;</span><br><span class="line"></span><br><span class="line">public class MemcacheUtil &#123;</span><br><span class="line">	public static MemCachedClient getMemCachedClient() &#123;</span><br><span class="line">		return SpringContextUtils.getBean(&quot;memcachedClient&quot;, MemCachedClient.class);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean set(String key, Object value) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().set(newKey, value);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean set(String key, Object value,Date date) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().set(newKey, value, date);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static Object get(String key) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().get(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean keyExists(String key) &#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().keyExists(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void clearCache(String...keys) &#123;</span><br><span class="line">		for (String key : keys) &#123;</span><br><span class="line">			String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">			getMemCachedClient().delete(newKey);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static boolean clearCacheAll() &#123;</span><br><span class="line">		return getMemCachedClient().flushAll();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 删除缓存中的数据</span><br><span class="line">	 * @param key</span><br><span class="line">	 */</span><br><span class="line">	public static boolean deleteCache(String key)&#123;</span><br><span class="line">		String newKey = ResourceUtil.getPropertyValue(&quot;jdbc.username&quot;) + key;</span><br><span class="line">		return getMemCachedClient().delete(newKey);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：<br><br>abc<br><br>null<br><br>abc<br><br>null<br><br>null<br><br>null<br></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">编辑器</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SakuraEditor</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Memcached</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yaojian.me/2018/01/31/Memcached的MemCachedClient设置过期时限/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/12/22/强制类型转换（引用类型）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">强制类型转换（引用类型）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -274,9 +373,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
